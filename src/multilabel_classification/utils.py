@@ -39,8 +39,8 @@ def get_bibtex(dir_path: str, use_train: bool):
         dataset = arff.load(open(os.path.join(dir_path, 'bibtex-train.arff')), "r")
     else:
         dataset = arff.load(open(os.path.join(dir_path, 'bibtex-test.arff')), "r")
-
-    data = np.array(dataset['data'], np.int)
+    
+    data = np.array(dataset['data'], np.int32)
 
     labels = data[:, feature_idx:]
     inputs = data[:, 0:feature_idx]
